@@ -24,11 +24,24 @@ class Search extends Component {
       console.log(response.data.hits);
       // loop thru response.data.hits add each recipe obj to this.state.recipes
       // get name, ingredients, recipe_url, image_url, ingredient_count
+
       self.setState({ recipes: response.data.hits })
     })
     .catch(function (error) {
       console.log(error);
     });
+  }
+
+  orderedRecipes(recipes) {
+    const list = []
+    recipes.map((recipeData, index) => { 
+      list.push({name: recipeData.recipe.label, count: recipeData.recipe.ingredients.length})
+    })
+
+    list.sort(function(a,b) {
+      return a.count - b.count
+    })
+    return list
   }
 
   handleChange(event) {
@@ -55,11 +68,22 @@ class Search extends Component {
           return (
             <div
             key={recipeData.recipe.url}>
-              <p>{recipeData.recipe.label}</p>
+              <p>{recipeData.recipe.label} : {recipeData.recipe.ingredients.length}</p>
             </div>
           )
         })}
         </div>
+          <div>
+          <hr />
+          Ordered recipes:
+          {this.orderedRecipes(this.state.recipes).map((recipeData, index) => {
+            return (
+              <div>
+                <p>{recipeData.name} : {recipeData.count}</p>
+              </div>
+            )
+          })}
+          </div>
       </div>
     );
   }
