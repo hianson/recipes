@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import '../App.css';
+// import '../App.css';
+import '../Search.css';
 import axios from 'axios';
 
 class Search extends Component {
@@ -78,20 +79,36 @@ class Search extends Component {
           )
         })}
         </div>
-          <div>
           <hr />
           Ordered recipes:
-          {this.orderedRecipes(this.state.recipes).map((recipeData, index) => {
-            return (
-              <div style={{ backgroundImage: `url(${recipeData.image})` }}>
-                <a href={recipeData.url}>{recipeData.name} : {recipeData.count}</a>
-              </div>
-            )
-          })}
+          <div className='recipe-container'>
+            {this.orderedRecipes(this.state.recipes).map((recipeData, index) => {
+              return (
+                <div style={{ backgroundImage: `url(${recipeData.image})` }} className='recipe-item'>
+                  <a style={{ color: 'white', textDecoration: "none" }}href={recipeData.url}>{recipeData.name} : {recipeData.count}</a>
+                </div>
+              )
+            })}
           </div>
       </div>
     );
   }
 }
 
+const styles = {
+  recipeList: {
+    // flex: 1,
+    // backgroundColor: 'aliceblue'
+    // textAlign: 'center',
+    // justifyContent: 'center'
+  },
+  recipeItem: {
+    // width: 400,
+    // height: 100,
+    // margin: 10,
+    // textAlign: 'center'
+  }
+};
+
 export default Search;
+// { backgroundImage: `url(${recipeData.image})` }

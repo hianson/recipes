@@ -1,0 +1,17 @@
+.recipe-container {
+  /*height: 100%;*/
+  /*width: 100%;*/
+  /*display: flex;*/
+  /*justify-content: center;*/
+  /*align-items: center;*/
+  /*margin: 10px;*/
+  text-align: center;
+}
+
+.recipe-item {
+  background-size: cover;
+  height: 100px;
+  width: 450px;
+  margin: 20px;
+  border-radius: 8px;
+}
