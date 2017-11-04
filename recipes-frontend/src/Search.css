@@ -11,7 +11,8 @@
   display: inline-block;
 }
 
-.recipe-item a {
+.recipe-item p {
   color: white;
+  font-weight: bolder;
   text-decoration: none;
 }
