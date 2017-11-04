@@ -34,8 +34,13 @@ class Search extends Component {
 
   orderedRecipes(recipes) {
     const list = []
-    recipes.map((recipeData, index) => { 
-      list.push({name: recipeData.recipe.label, count: recipeData.recipe.ingredients.length})
+    recipes.map((recipeData, index) => {
+      list.push({
+        name: recipeData.recipe.label,
+        count: recipeData.recipe.ingredients.length,
+        url: recipeData.recipe.url,
+        image: recipeData.recipe.image
+      })
     })
 
     list.sort(function(a,b) {
@@ -78,8 +83,8 @@ class Search extends Component {
           Ordered recipes:
           {this.orderedRecipes(this.state.recipes).map((recipeData, index) => {
             return (
-              <div>
-                <p>{recipeData.name} : {recipeData.count}</p>
+              <div style={{ backgroundImage: `url(${recipeData.image})` }}>
+                <a href={recipeData.url}>{recipeData.name} : {recipeData.count}</a>
               </div>
             )
           })}
