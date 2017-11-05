@@ -7,8 +7,6 @@ class Modal extends Component {
 
     let modalStyle = {
       textAlign: 'center',
-      // width: '450px',
-      // height: '450px',
       position: 'absolute',
       top: '30%',
       left: '50%',

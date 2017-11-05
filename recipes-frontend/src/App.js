@@ -7,8 +7,14 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      isModalOpen: false
+      isModalOpen: false,
+      registrationEmail: '',
+      registrationPassword: '',
+      loginEmail: '',
+      loginPassword: ''
     }
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   openModal() {
@@ -17,6 +23,19 @@ class App extends Component {
 
   closeModal() {
     this.setState({ isModalOpen: false })
+  }
+
+  handleChange(option, event) {
+    var updateState = {}
+
+    updateState[option] = event.target.value
+    this.setState(updateState);
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    console.log(this.state)
+    // this.setState({searchParams: event.target.value});
   }
 
   render() {
@@ -29,11 +48,11 @@ class App extends Component {
           <form onSubmit={this.handleSubmit}>
             <label>
               Email:
-              <input type="text" value={this.state.searchParams} onChange={this.handleChange} />
+              <input type="text" value={this.state.searchParams} onChange={(event)=>this.handleChange('registrationEmail', event)} />
             </label>
             <label>
               Password:
-              <input type="password" value={this.state.searchParams} onChange={this.handleChange} />
+              <input type="password" value={this.state.searchParams} onChange={(event)=>this.handleChange('registrationPassword', event)} />
             </label>
             <input type="submit" value="Submit" />
           </form>
