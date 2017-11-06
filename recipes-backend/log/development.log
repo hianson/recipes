@@ -70,3 +70,739 @@ FOREIGN KEY ("user_id")
   [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3872935140962846595)[0m
   [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2017-11-05 15:30:14 -0800
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/var/rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/var/rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (4.8ms)
+Completed 200 OK in 16ms (Views: 11.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for ::1 at 2017-11-05 15:30:15 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[36mUser Load (5.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mRecipe Load (24.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "anson@anson"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "anson@anson"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "anson@anson"], ["LIMIT", 1]]
+  [1m[35mSQL (29.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "anson@anson"], ["password_digest", "$2a$10$/FcShWHwgxPBb6yJBcmdqOESk00K.x5rm.5P1hp1iANgMhCISavXW"], ["created_at", "2017-11-05 23:32:41.459427"], ["updated_at", "2017-11-05 23:32:41.459427"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "anson@anson"], ["LIMIT", 1]]
+Started GET "/" for ::1 at 2017-11-05 15:50:21 -0800
+  [1m[35m (7.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/var/rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/var/rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (4.4ms)
+Completed 200 OK in 16ms (Views: 11.5ms | ActiveRecord: 0.0ms)
+
+
+Started OPTIONS "/users" for ::1 at 2017-11-05 15:55:00 -0800
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/users"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started OPTIONS "/users" for ::1 at 2017-11-05 15:55:21 -0800
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/users"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started OPTIONS "/users" for ::1 at 2017-11-05 15:55:40 -0800
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/users"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started OPTIONS "/users" for ::1 at 2017-11-05 15:56:38 -0800
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/users"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/users?email=anson@anson&password=[FILTERED]" for ::1 at 2017-11-05 16:06:43 -0800
+Processing by UsersController#create as */*
+  Parameters: {"email"=>"anson@anson", "password"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 136ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `user_params' for #<UsersController:0x007ffbfc97b170>
+Did you mean?  users_path):
+  
+app/controllers/users_controller.rb:10:in `create'
+Started OPTIONS "/users" for ::1 at 2017-11-05 16:09:37 -0800
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/users"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/users" for ::1 at 2017-11-05 16:09:53 -0800
+Processing by UsersController#create as HTML
+Completed 500 Internal Server Error in 91ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `user_params' for #<UsersController:0x007ffbfcb7da90>
+Did you mean?  users_path):
+  
+app/controllers/users_controller.rb:10:in `create'
+Started POST "/users" for ::1 at 2017-11-05 18:24:33 -0800
+Processing by UsersController#create as HTML
+Completed 500 Internal Server Error in 176ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `user_params' for #<UsersController:0x007ffbfdd44be8>
+Did you mean?  users_path):
+  
+app/controllers/users_controller.rb:10:in `create'
+Started POST "/users" for ::1 at 2017-11-05 18:34:03 -0800
+Processing by UsersController#create as HTML
+Completed 500 Internal Server Error in 98ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `user_params' for #<UsersController:0x007ffbfdb7fb50>
+Did you mean?  users_path):
+  
+app/controllers/users_controller.rb:10:in `create'
+Started OPTIONS "/users" for ::1 at 2017-11-05 18:35:02 -0800
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/users"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/users" for ::1 at 2017-11-05 18:38:45 -0800
+Processing by UsersController#create as HTML
+Completed 500 Internal Server Error in 158ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `user_params' for #<UsersController:0x007ffbfc2e06f8>
+Did you mean?  users_path):
+  
+app/controllers/users_controller.rb:10:in `create'
+Started GET "/" for ::1 at 2017-11-05 19:48:04 -0800
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/var/rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/var/rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (4.8ms)
+Completed 200 OK in 17ms (Views: 12.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for ::1 at 2017-11-05 19:48:04 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users" for ::1 at 2017-11-05 19:54:58 -0800
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2017-11-05 19:56:49 -0800
+Processing by UsersController#index as HTML
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2017-11-05 19:58:05 -0800
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2017-11-05 19:59:16 -0800
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2017-11-05 19:59:45 -0800
+Processing by UsersController#index as HTML
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2017-11-05 20:01:57 -0800
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2017-11-05 20:02:38 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"user", "password"=>"[FILTERED]", "user"=>{"email"=>"user"}}
+Completed 500 Internal Server Error in 94ms (ActiveRecord: 27.4ms)
+
+
+  
+NameError (undefined local variable or method `user_params' for #<UsersController:0x007fb60ab0ccd8>
+Did you mean?  users_path):
+  
+app/controllers/users_controller.rb:10:in `create'
+Started POST "/users" for ::1 at 2017-11-05 20:04:27 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"user_params"=>{"email"=>"user", "password"=>"[FILTERED]"}, "user"=>{}}
+Completed 500 Internal Server Error in 82ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `user_params' for #<UsersController:0x007fb60e453af0>
+Did you mean?  users_path):
+  
+app/controllers/users_controller.rb:10:in `create'
+Started POST "/users" for ::1 at 2017-11-05 20:05:46 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"user", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 77ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `user_params' for #<UsersController:0x007fb60e0e25d8>
+Did you mean?  users_path):
+  
+app/controllers/users_controller.rb:10:in `create'
+Started POST "/users" for ::1 at 2017-11-05 20:06:06 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"user", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 80ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `user_params' for #<UsersController:0x007fb60e2ea3f8>
+Did you mean?  users_path):
+  
+app/controllers/users_controller.rb:10:in `create'
+Started POST "/users" for ::1 at 2017-11-05 20:06:22 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"user", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 77ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `user_params' for #<UsersController:0x007fb60bac9888>
+Did you mean?  users_path):
+  
+app/controllers/users_controller.rb:10:in `create'
+Started POST "/users" for ::1 at 2017-11-05 20:06:28 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"user", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 86ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `user_params' for #<UsersController:0x007fb60ae3f7c0>
+Did you mean?  users_path):
+  
+app/controllers/users_controller.rb:10:in `create'
+Started POST "/users" for ::1 at 2017-11-05 20:07:04 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"user", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 12.8ms)
+
+
+  
+ArgumentError (When assigning attributes, you must pass a hash as an argument.):
+  
+app/controllers/users_controller.rb:10:in `create'
+Started POST "/users" for ::1 at 2017-11-05 20:07:20 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"user", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 72ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `user' for #<UsersController:0x007fb60b9b27d8>):
+  
+app/controllers/users_controller.rb:10:in `create'
+Started POST "/users" for ::1 at 2017-11-05 20:08:10 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"user", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 90ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `user' for #<UsersController:0x007fb60e1121c0>):
+  
+Started POST "/users" for ::1 at 2017-11-05 20:08:11 -0800
+app/controllers/users_controller.rb:10:in `create'
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"user", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 81ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `user' for #<UsersController:0x007fb60e741ca8>):
+  
+app/controllers/users_controller.rb:10:in `create'
+Started POST "/users" for ::1 at 2017-11-05 20:12:51 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"user", "password"=>"[FILTERED]", "user"=>{"email"=>"user"}}
+Completed 500 Internal Server Error in 79ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `user' for #<UsersController:0x007fb60e61a118>):
+  
+app/controllers/users_controller.rb:10:in `create'
+Started POST "/users" for ::1 at 2017-11-05 21:39:36 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"", "password"=>"[FILTERED]", "user"=>{"email"=>""}}
+Completed 500 Internal Server Error in 223ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `user' for #<UsersController:0x007fb60e5eb200>):
+  
+app/controllers/users_controller.rb:10:in `create'
+Started POST "/users" for ::1 at 2017-11-05 21:39:40 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"", "password"=>"[FILTERED]", "user"=>{"email"=>""}}
+Completed 500 Internal Server Error in 107ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `user' for #<UsersController:0x007fb60aa752e8>):
+  
+app/controllers/users_controller.rb:10:in `create'
+Started POST "/users" for ::1 at 2017-11-05 21:39:48 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"user", "password"=>"[FILTERED]", "user"=>{"email"=>"user"}}
+Completed 500 Internal Server Error in 82ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `user' for #<UsersController:0x007fb60e0338a8>):
+  
+app/controllers/users_controller.rb:10:in `create'
+Started POST "/users" for ::1 at 2017-11-05 21:44:05 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"user", "password"=>"[FILTERED]", "user"=>{"email"=>"user"}}
+Completed 500 Internal Server Error in 78ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `user' for #<UsersController:0x007fb60e3ca908>):
+  
+app/controllers/users_controller.rb:10:in `create'
+Started POST "/users" for ::1 at 2017-11-05 21:45:58 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"user", "password"=>"[FILTERED]", "user"=>{"email"=>"user"}}
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2017-11-05 21:46:11 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"user", "password"=>"[FILTERED]", "user"=>{"email"=>"user"}}
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2017-11-05 21:46:29 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"user", "password"=>"[FILTERED]", "user"=>{"email"=>"user"}}
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2017-11-05 21:46:50 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"user", "password"=>"[FILTERED]", "user"=>{"email"=>"user"}}
+Completed 500 Internal Server Error in 76ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `email' for #<UsersController:0x007fb60e272768>):
+  
+app/controllers/users_controller.rb:13:in `create'
+Started POST "/users" for ::1 at 2017-11-05 21:47:04 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"user", "password"=>"[FILTERED]", "user"=>{"email"=>"user"}}
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2017-11-05 21:47:10 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"user", "password"=>"[FILTERED]", "user"=>{"email"=>"user"}}
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2017-11-05 21:48:00 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"user_params"=>{"email"=>"", "password"=>"[FILTERED]"}, "user"=>{}}
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2017-11-05 21:48:11 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"user_params"=>{"email"=>"anson", "password"=>"[FILTERED]"}, "user"=>{}}
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2017-11-05 21:48:22 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"user_params"=>{"email"=>"anson", "password"=>"[FILTERED]"}, "user"=>{}}
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2017-11-05 21:49:20 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"user_params"=>{"email"=>"anson", "password"=>"[FILTERED]"}, "user"=>{}}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/users_controller.rb:17:in `create'
+Started POST "/users" for ::1 at 2017-11-05 21:50:25 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"anson", "password"=>"[FILTERED]", "user"=>{"email"=>"anson"}}
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2017-11-05 21:51:52 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"user_params"=>{"email"=>"anson", "password"=>"[FILTERED]"}, "user"=>{}}
+Completed 204 No Content in 6ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2017-11-05 21:52:10 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"user_params"=>{"email"=>"anson", "password"=>"[FILTERED]"}, "user"=>{}}
+Completed 204 No Content in 6ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2017-11-05 21:54:21 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"user_params"=>{"email"=>"", "password"=>"[FILTERED]"}, "user"=>{}}
+Unpermitted parameters: :user_params, :user
+  [1m[35m (24.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (36.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 111ms (ActiveRecord: 61.8ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Password can't be blank, Email can't be blank):
+  
+app/controllers/users_controller.rb:23:in `create'
+Started POST "/users" for ::1 at 2017-11-05 21:56:37 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"user_params"=>{"email"=>"", "password"=>"[FILTERED]"}, "user"=>{}}
+Completed 204 No Content in 6ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2017-11-05 21:56:40 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"user_params"=>{"email"=>"", "password"=>"[FILTERED]"}, "user"=>{}}
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2017-11-05 21:56:46 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"user_params"=>{"email"=>"", "password"=>"[FILTERED]"}, "user"=>{}}
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2017-11-05 21:57:17 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"foo", "password"=>"[FILTERED]", "user"=>{"email"=>"foo"}}
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2017-11-05 21:57:26 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"foo", "password"=>"[FILTERED]", "user"=>{"email"=>"foo"}}
+Completed 204 No Content in 5ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2017-11-05 21:57:41 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"foo", "password"=>"[FILTERED]", "user"=>{"email"=>"foo"}}
+Completed 204 No Content in 9ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2017-11-05 21:57:54 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"foo", "password"=>"[FILTERED]", "user"=>{"email"=>"foo"}}
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2017-11-05 21:58:24 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"foo", "password"=>"[FILTERED]", "user"=>{"email"=>"foo"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (5.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "foo"], ["LIMIT", 1]]
+  [1m[35mSQL (36.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "foo"], ["password_digest", "$2a$10$Z8A0ALWaYqlu1eIVlAIpvefPeBSiv3I/q6WV.QepDBNWcYIEmOjyS"], ["created_at", "2017-11-06 05:58:24.545830"], ["updated_at", "2017-11-06 05:58:24.545830"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 180ms (ActiveRecord: 43.8ms)
+
+
+  
+NoMethodError (undefined method `json_response' for #<UsersController:0x007fb60abeda30>):
+  
+app/controllers/users_controller.rb:22:in `create'
+Started POST "/users" for ::1 at 2017-11-05 21:59:40 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"foo", "password"=>"[FILTERED]", "user"=>{"email"=>"foo"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "foo"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 78ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Email has already been taken):
+  
+app/controllers/users_controller.rb:21:in `create'
+Started POST "/users" for ::1 at 2017-11-05 21:59:56 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"foo", "password"=>"[FILTERED]", "user"=>{"email"=>"foo"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (2.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "foo"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 75ms (ActiveRecord: 2.5ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Email has already been taken):
+  
+app/controllers/users_controller.rb:21:in `create'
+Started POST "/users" for ::1 at 2017-11-05 22:06:53 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"", "password"=>"[FILTERED]", "user"=>{"email"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 6ms (ActiveRecord: 0.9ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Password can't be blank, Email can't be blank):
+  
+app/controllers/users_controller.rb:21:in `create'
+Started POST "/users" for ::1 at 2017-11-05 22:11:56 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"", "password"=>"[FILTERED]", "user"=>{"email"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 5ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Password can't be blank, Email can't be blank):
+  
+app/controllers/users_controller.rb:21:in `create'
+Started POST "/users" for ::1 at 2017-11-05 22:14:09 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"", "password"=>"[FILTERED]", "user"=>{"email"=>""}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 6ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Password can't be blank, Email can't be blank):
+  
+app/controllers/users_controller.rb:21:in `create'
+Started POST "/users" for ::1 at 2017-11-05 22:14:15 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"", "password"=>"[FILTERED]", "user"=>{"email"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 7ms (ActiveRecord: 1.4ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Password can't be blank, Email can't be blank):
+  
+app/controllers/users_controller.rb:21:in `create'
+Started POST "/users" for ::1 at 2017-11-05 22:17:10 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"", "password"=>"[FILTERED]", "user"=>{"email"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 4ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Password can't be blank, Email can't be blank):
+  
+app/controllers/users_controller.rb:21:in `create'
+Started POST "/users" for ::1 at 2017-11-05 22:17:14 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"", "password"=>"[FILTERED]", "user"=>{"email"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 5ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Password can't be blank, Email can't be blank):
+  
+app/controllers/users_controller.rb:21:in `create'

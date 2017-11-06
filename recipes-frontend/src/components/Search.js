@@ -65,7 +65,7 @@ class Search extends Component {
           <div>
             {this.orderedRecipes(this.state.recipes).map((recipeData, index) => {
               return (
-                <div className='recipe-divider'>
+                <div className='recipe-divider' key={index}>
                   <a href={recipeData.url}>
                     <div className='recipe-item' style={{backgroundImage: `url(${recipeData.image})`}} >
                       <p>{recipeData.name} : {recipeData.count}</p>
