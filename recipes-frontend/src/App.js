@@ -39,17 +39,6 @@ class App extends Component {
   }
 
   register() {
-    console.log(this.state.registrationEmail)
-    console.log(this.state.registrationPassword)
-
-    // axios({
-    //   method: 'post',
-    //   url: 'http://localhost:3001/users',
-    //   user_params: {
-    //     email: this.state.registrationEmail,
-    //     password: this.state.registrationPassword
-    //   }
-    // });
     axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
     axios.post('http://localhost:3001/users', {
       email: this.state.registrationEmail,
@@ -60,7 +49,6 @@ class App extends Component {
     })
     .catch(function(error) {
       console.log(error);
-      console.log('noo')
     });
   }
 
@@ -74,7 +62,7 @@ class App extends Component {
           <form onSubmit={this.handleSubmit}>
             <label>
               Email:
-              <input type="text" value={this.state.searchParams} onChange={(event)=>this.handleChange('registrationEmail', event)} />
+              <input type="email" value={this.state.searchParams} onChange={(event)=>this.handleChange('registrationEmail', event)} />
             </label>
             <label>
               Password:
