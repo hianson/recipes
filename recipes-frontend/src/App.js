@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Search from './components/Search.js'
 import Modal from './components/Modal.js'
+import axios from 'axios';
 
 class App extends Component {
   constructor(props) {
@@ -34,8 +35,33 @@ class App extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log(this.state)
-    // this.setState({searchParams: event.target.value});
+    this.register()
+  }
+
+  register() {
+    console.log(this.state.registrationEmail)
+    console.log(this.state.registrationPassword)
+
+    axios({
+      method: 'post',
+      url: 'http://localhost:3001/users',
+      user_params: {
+        email: this.state.registrationEmail,
+        password: this.state.registrationPassword
+      }
+    });
+
+    // axios.post('http://localhost:3001/users', {
+    //   email: this.state.registrationEmail,
+    //   password: this.state.registrationPassword
+    // })
+    // .then(function (response) {
+    //   console.log(response);
+    // })
+    // .catch(function (error) {
+    //   console.log(error);
+    //   console.log('there wuz an error')
+    // });
   }
 
   render() {
