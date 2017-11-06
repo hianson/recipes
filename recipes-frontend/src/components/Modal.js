@@ -12,7 +12,9 @@ class Modal extends Component {
       left: '50%',
       transform: 'translate(-50%, -50%)',
       zIndex: '9999',
-      background: '#fff'
+      background: '#fff',
+      maxwidth: '500px',
+      padding: '10px'
     }
 
     let backdropStyle = {
