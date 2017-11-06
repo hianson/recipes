@@ -42,26 +42,26 @@ class App extends Component {
     console.log(this.state.registrationEmail)
     console.log(this.state.registrationPassword)
 
-    axios({
-      method: 'post',
-      url: 'http://localhost:3001/users',
-      user_params: {
-        email: this.state.registrationEmail,
-        password: this.state.registrationPassword
-      }
-    });
-
-    // axios.post('http://localhost:3001/users', {
-    //   email: this.state.registrationEmail,
-    //   password: this.state.registrationPassword
-    // })
-    // .then(function (response) {
-    //   console.log(response);
-    // })
-    // .catch(function (error) {
-    //   console.log(error);
-    //   console.log('there wuz an error')
+    // axios({
+    //   method: 'post',
+    //   url: 'http://localhost:3001/users',
+    //   user_params: {
+    //     email: this.state.registrationEmail,
+    //     password: this.state.registrationPassword
+    //   }
     // });
+    axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+    axios.post('http://localhost:3001/users', {
+      email: this.state.registrationEmail,
+      password: this.state.registrationPassword
+    })
+    .then(response => {
+      console.log(response)
+    })
+    .catch(function(error) {
+      console.log(error);
+      console.log('noo')
+    });
   }
 
   render() {

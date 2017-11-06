@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   get "/home" => "home#index"
 
   resources :recipes
-  resources :users, only: [:create]
+  resources :users, only: [:create, :index]
 end
