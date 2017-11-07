@@ -5,13 +5,13 @@ class UserProfile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: props.match.params.id
+      email: props.match.params.email
     };
   }
 
   render() {
     return (
-      <div>User profile page / user id: {this.state.id}</div>
+      <div>User profile page / user email: {this.state.email}</div>
     )
   }
 }

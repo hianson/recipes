@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Link } from 'react-router-dom';
 import './App.css';
 import Search from './components/Search.js'
 import UserProfile from './components/UserProfile.js'
@@ -54,6 +54,12 @@ class App extends Component {
     });
   }
 
+  renderProfileLink() {
+    if (this.state.registrationEmail != '') {
+      return <Link to={"/users/" + this.state.registrationEmail}>Profile</Link>
+    }
+  }
+
   render() {
     return (
       <div>
@@ -74,10 +80,12 @@ class App extends Component {
           </form>
           <p><button onClick={() => this.closeModal()}>Close</button></p>
         </Modal>
+
+        <view> {this.renderProfileLink()} </view>
         
         <Switch>
           <Route exact path='/' component={Search}/>
-          <Route path='/users/:id' component={UserProfile}/>
+          <Route path='/users/:email' component={UserProfile}/>
         </Switch>
 
       </div>
