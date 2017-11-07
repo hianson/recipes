@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { Switch, Route } from 'react-router-dom';
 import './App.css';
 import Search from './components/Search.js'
+import UserProfile from './components/UserProfile.js'
 import Modal from './components/Modal.js'
 import axios from 'axios';
 
@@ -72,8 +74,11 @@ class App extends Component {
           </form>
           <p><button onClick={() => this.closeModal()}>Close</button></p>
         </Modal>
-
-        <Search />
+        
+        <Switch>
+          <Route exact path='/' component={Search}/>
+          <Route path='/users/:id' component={UserProfile}/>
+        </Switch>
 
       </div>
     );
