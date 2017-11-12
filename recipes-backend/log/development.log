@@ -874,3 +874,304 @@ Completed 500 Internal Server Error in 128ms (ActiveRecord: 9.5ms)
 NoMethodError (undefined method `json_response' for #<UsersController:0x007f8e43868818>):
   
 app/controllers/users_controller.rb:11:in `create'
+Started POST "/users" for ::1 at 2017-11-12 12:08:39 -0800
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"john@john.com", "password"=>"[FILTERED]", "user"=>{"email"=>"john@john.com"}}
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (6.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john@john.com"], ["LIMIT", 1]]
+  [1m[35m (4.9ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 92ms (ActiveRecord: 21.4ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Email has already been taken):
+  
+app/controllers/users_controller.rb:10:in `create'
+Started GET "/users/john@john.com" for ::1 at 2017-11-12 12:10:05 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/users/john@john.com"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/favicon.ico" for ::1 at 2017-11-12 12:10:05 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/users" for ::1 at 2017-11-12 12:21:22 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"asdf@asdf.com", "password"=>"[FILTERED]", "user"=>{"email"=>"asdf@asdf.com"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdf@asdf.com"], ["LIMIT", 1]]
+  [1m[35mSQL (3.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "asdf@asdf.com"], ["password_digest", "$2a$10$.E0j8yDJn/cLNKRz0x1GrO5a8oAjd3QFzamK5HDeAYAnZJZLeNbAW"], ["created_at", "2017-11-12 20:21:22.857019"], ["updated_at", "2017-11-12 20:21:22.857019"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 109ms (ActiveRecord: 9.1ms)
+
+
+  
+NoMethodError (undefined method `json_response' for #<UsersController:0x007fb929caafa0>):
+  
+app/controllers/users_controller.rb:11:in `create'
+Started POST "/users" for ::1 at 2017-11-12 12:28:01 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"a@a.com", "password"=>"[FILTERED]", "user"=>{"email"=>"a@a.com"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "a@a.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 62ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Email has already been taken):
+  
+app/controllers/users_controller.rb:10:in `create'
+Started POST "/users" for ::1 at 2017-11-12 12:28:43 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"asdfasdf@asdf.com", "password"=>"[FILTERED]", "user"=>{"email"=>"asdfasdf@asdf.com"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdfasdf@asdf.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "asdfasdf@asdf.com"], ["password_digest", "$2a$10$JU3R5Rg84/lKW4rYqECfJeAIRjTB7svU3wiUhKSWvWj.2WfktWumq"], ["created_at", "2017-11-12 20:28:43.261313"], ["updated_at", "2017-11-12 20:28:43.261313"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 92ms (ActiveRecord: 2.5ms)
+
+
+  
+NoMethodError (undefined method `json_response' for #<UsersController:0x007fb929bf97a0>):
+  
+app/controllers/users_controller.rb:11:in `create'
+Started POST "/users" for ::1 at 2017-11-12 12:31:13 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"bbbb@bbbb.com", "password"=>"[FILTERED]", "user"=>{"email"=>"bbbb@bbbb.com"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bbbb@bbbb.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "bbbb@bbbb.com"], ["password_digest", "$2a$10$aLOrwq3ICMfYOE6Criux8uberRwhhAB55aX3mmjfU26.qFvc/gcW2"], ["created_at", "2017-11-12 20:31:13.623429"], ["updated_at", "2017-11-12 20:31:13.623429"]]
+  [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 115ms (ActiveRecord: 10.5ms)
+
+
+  
+NoMethodError (undefined method `json_response' for #<UsersController:0x007fb929cd3748>):
+  
+app/controllers/users_controller.rb:12:in `create'
+Started POST "/users" for ::1 at 2017-11-12 13:43:59 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"bob@bob.com", "password"=>"[FILTERED]", "user"=>{"email"=>"bob@bob.com"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bob@bob.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 71ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Email has already been taken):
+  
+app/controllers/users_controller.rb:10:in `create'
+Started POST "/users" for ::1 at 2017-11-12 14:02:01 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"blabla@bla.com", "password"=>"[FILTERED]", "user"=>{"email"=>"blabla@bla.com"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "blabla@bla.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "blabla@bla.com"], ["password_digest", "$2a$10$WfqZzH7yH1I7JQQRZgZSHePLxuhdLRs2X1Mg7R4KrG3AXxLdx6FMa"], ["created_at", "2017-11-12 22:02:01.090040"], ["updated_at", "2017-11-12 22:02:01.090040"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 105ms (ActiveRecord: 2.0ms)
+
+
+  
+NoMethodError (undefined method `json_response' for #<UsersController:0x007fb92936f710>):
+  
+app/controllers/users_controller.rb:11:in `create'
+Started POST "/users" for ::1 at 2017-11-12 14:03:38 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"qqqqq@qqqq.com", "password"=>"[FILTERED]", "user"=>{"email"=>"qqqqq@qqqq.com"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "qqqqq@qqqq.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "qqqqq@qqqq.com"], ["password_digest", "$2a$10$N2SYjqCzkJ8eBQ0v5/Wv4eHN2iPhLoe1OZgpdtIy939Y5P6ZdyubS"], ["created_at", "2017-11-12 22:03:38.951487"], ["updated_at", "2017-11-12 22:03:38.951487"]]
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 108ms (ActiveRecord: 6.5ms)
+
+
+  
+NoMethodError (undefined method `json_response' for #<UsersController:0x007fb929565038>):
+  
+app/controllers/users_controller.rb:11:in `create'
+Started POST "/users" for ::1 at 2017-11-12 14:20:46 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"wwww@www.com", "password"=>"[FILTERED]", "user"=>{"email"=>"wwww@www.com"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "wwww@www.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "wwww@www.com"], ["password_digest", "$2a$10$5WJMNht3gyKtazFuoSBiXukPw9FaA0xP6PBSWJeQ7Q99QEFlS415u"], ["created_at", "2017-11-12 22:20:46.070347"], ["updated_at", "2017-11-12 22:20:46.070347"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 98ms (ActiveRecord: 2.6ms)
+
+
+  
+NoMethodError (undefined method `json_response' for #<UsersController:0x007fb92a037470>):
+  
+app/controllers/users_controller.rb:11:in `create'
+Started POST "/users" for ::1 at 2017-11-12 14:23:20 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"eee@eee.com", "password"=>"[FILTERED]", "user"=>{"email"=>"eee@eee.com"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "eee@eee.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "eee@eee.com"], ["password_digest", "$2a$10$NgoWN.czxaWCYzQ.CVYiru4JWjqShRZo1j3vEm1tu3Ngi0UdcxuV6"], ["created_at", "2017-11-12 22:23:20.441254"], ["updated_at", "2017-11-12 22:23:20.441254"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 90ms (ActiveRecord: 2.2ms)
+
+
+  
+NoMethodError (undefined method `json_response' for #<UsersController:0x007fb92b1ff2c0>):
+  
+app/controllers/users_controller.rb:11:in `create'
+Started POST "/users" for ::1 at 2017-11-12 14:54:50 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"rrrrr@rrr.com", "password"=>"[FILTERED]", "user"=>{"email"=>"rrrrr@rrr.com"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rrrrr@rrr.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "rrrrr@rrr.com"], ["password_digest", "$2a$10$CDwOdNgS.xa51xW1bZGcvuEbGxSvldhPx28v1k478gftHdcE92rO2"], ["created_at", "2017-11-12 22:54:50.860415"], ["updated_at", "2017-11-12 22:54:50.860415"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 100ms (ActiveRecord: 1.2ms)
+
+
+  
+NoMethodError (undefined method `json_response' for #<UsersController:0x007fb92c4e7b08>):
+  
+app/controllers/users_controller.rb:11:in `create'
+Started POST "/users" for ::1 at 2017-11-12 15:25:15 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"testing@testing.com", "password"=>"[FILTERED]", "user"=>{"email"=>"testing@testing.com"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testing@testing.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "testing@testing.com"], ["password_digest", "$2a$10$qLx.8lb64dUPA5EtyesSi.UdVxoRPH2JxLU/DDKkGO/IeyeF8Qtti"], ["created_at", "2017-11-12 23:25:15.341114"], ["updated_at", "2017-11-12 23:25:15.341114"]]
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 107ms (ActiveRecord: 7.2ms)
+
+
+  
+NoMethodError (undefined method `json_response' for #<UsersController:0x007fb92966c5a8>):
+  
+app/controllers/users_controller.rb:11:in `create'
+Started POST "/users" for ::1 at 2017-11-12 15:32:19 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"ttttt@tttt.com", "password"=>"[FILTERED]", "user"=>{"email"=>"ttttt@tttt.com"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ttttt@tttt.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "ttttt@tttt.com"], ["password_digest", "$2a$10$hGVBub65tjcge5r4/InpPev7uvMU75GpXik2oALKoq2gFX87DDmta"], ["created_at", "2017-11-12 23:32:19.559411"], ["updated_at", "2017-11-12 23:32:19.559411"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 98ms (ActiveRecord: 1.6ms)
+
+
+  
+NoMethodError (undefined method `json_response' for #<UsersController:0x007fb92c22ab18>):
+  
+app/controllers/users_controller.rb:11:in `create'
+Started POST "/users" for ::1 at 2017-11-12 15:33:15 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"yyyy@yyy.com", "password"=>"[FILTERED]", "user"=>{"email"=>"yyyy@yyy.com"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yyyy@yyy.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "yyyy@yyy.com"], ["password_digest", "$2a$10$1xTYshKmM5ghDnojzvC1DewEUYdvFisK53OVUsOUTcn3Yp0LuuBQu"], ["created_at", "2017-11-12 23:33:15.096855"], ["updated_at", "2017-11-12 23:33:15.096855"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 92ms (ActiveRecord: 2.6ms)
+
+
+  
+NoMethodError (undefined method `json_response' for #<UsersController:0x007fb92c391420>):
+  
+app/controllers/users_controller.rb:11:in `create'
+Started POST "/users" for ::1 at 2017-11-12 15:40:51 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"yyy@yyy.com", "password"=>"[FILTERED]", "user"=>{"email"=>"yyy@yyy.com"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yyy@yyy.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "yyy@yyy.com"], ["password_digest", "$2a$10$OyOr4LEvtm7uH8RCrxX.rOXPzZK/wfi1xk4TkK2Ad5t/o.vhwpqci"], ["created_at", "2017-11-12 23:40:51.331916"], ["updated_at", "2017-11-12 23:40:51.331916"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 102ms (ActiveRecord: 2.4ms)
+
+
+  
+NoMethodError (undefined method `json_response' for #<UsersController:0x007fb92c5844a8>):
+  
+app/controllers/users_controller.rb:11:in `create'
+Started POST "/users" for ::1 at 2017-11-12 15:42:00 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"uuu@uuu.com", "password"=>"[FILTERED]", "user"=>{"email"=>"uuu@uuu.com"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "uuu@uuu.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "uuu@uuu.com"], ["password_digest", "$2a$10$InmQS416cw6tIZA5Ycy07e/4.alb/FiQHNBdGZFxuIPv9mzHQBwMu"], ["created_at", "2017-11-12 23:42:00.655526"], ["updated_at", "2017-11-12 23:42:00.655526"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 94ms (ActiveRecord: 2.2ms)
+
+
+  
+NoMethodError (undefined method `json_response' for #<UsersController:0x007fb92a0265f8>):
+  
+app/controllers/users_controller.rb:11:in `create'
+Started POST "/users" for ::1 at 2017-11-12 15:44:23 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"uuu@uuu.com", "password"=>"[FILTERED]", "user"=>{"email"=>"uuu@uuu.com"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "uuu@uuu.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 62ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Email has already been taken):
+  
+app/controllers/users_controller.rb:10:in `create'
+Started POST "/users" for ::1 at 2017-11-12 15:46:35 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"nnnn@nnnn.com", "password"=>"[FILTERED]", "user"=>{"email"=>"nnnn@nnnn.com"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nnnn@nnnn.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "nnnn@nnnn.com"], ["password_digest", "$2a$10$geoqN0pPT8/WRi0Gups31umfeq/1Xr/ZXjCjCFU1I0FZs75OMDej6"], ["created_at", "2017-11-12 23:46:35.352558"], ["updated_at", "2017-11-12 23:46:35.352558"]]
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 100ms (ActiveRecord: 4.0ms)
+
+
+  
+NoMethodError (undefined method `json_response' for #<UsersController:0x007fb929969378>):
+  
+app/controllers/users_controller.rb:11:in `create'

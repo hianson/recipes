@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import '../App.css';
 import '../Search.css';
 import axios from 'axios';
+import UserProfile from './UserProfile.js'
+
 
 class Search extends Component {
   constructor(props) {
   super(props);
   this.state = {
     searchParams: '',
-    recipes: [
-      ]
+    recipes: []
   };
 
   this.handleChange = this.handleChange.bind(this);
@@ -66,7 +67,7 @@ class Search extends Component {
             {this.orderedRecipes(this.state.recipes).map((recipeData, index) => {
               return (
                 <div className='recipe-divider' key={index}>
-                  <a href={recipeData.url}>
+                  <a href={recipeData.url} target="_blank" onClick={() => this.props.viewedRecipes(recipeData)}>
                     <div className='recipe-item' style={{backgroundImage: `url(${recipeData.image})`}} >
                       <p>{recipeData.name} : {recipeData.count}</p>
                     </div>

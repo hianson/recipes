@@ -14,10 +14,12 @@ class App extends Component {
       registrationEmail: '',
       registrationPassword: '',
       loginEmail: '',
-      loginPassword: ''
+      loginPassword: '',
+      userRecipes: []
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.viewedRecipes = this.viewedRecipes.bind(this)
   }
 
   openModal() {
@@ -60,6 +62,10 @@ class App extends Component {
     }
   }
 
+  viewedRecipes(recipe) {
+    this.state.userRecipes.push(recipe)
+  }
+
   render() {
     return (
       <div>
@@ -84,8 +90,8 @@ class App extends Component {
         <view> {this.renderProfileLink()} </view>
         
         <Switch>
-          <Route exact path='/' component={Search}/>
-          <Route path='/users/:email' component={UserProfile}/>
+          <Route exact path='/' render={(props) => <Search {...props} viewedRecipes={this.viewedRecipes} />} />
+          <Route path='/users/:email' render={(props) => <UserProfile {...props} userRecipes={this.state.userRecipes}/>} />
         </Switch>
 
       </div>
