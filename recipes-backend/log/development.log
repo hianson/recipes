@@ -1175,3 +1175,31 @@ Completed 500 Internal Server Error in 100ms (ActiveRecord: 4.0ms)
 NoMethodError (undefined method `json_response' for #<UsersController:0x007fb929969378>):
   
 app/controllers/users_controller.rb:11:in `create'
+Started POST "/users" for ::1 at 2017-11-12 15:52:32 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"mmmm@mmm.com", "password"=>"[FILTERED]", "user"=>{"email"=>"mmmm@mmm.com"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mmmm@mmm.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "mmmm@mmm.com"], ["password_digest", "$2a$10$Ub6T4Oax64fv8gBHIL5/i.QZDuEhJAv4kPe3Jd9ICayXGnPMx/sX6"], ["created_at", "2017-11-12 23:52:32.222811"], ["updated_at", "2017-11-12 23:52:32.222811"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 97ms (ActiveRecord: 2.8ms)
+
+
+  
+NoMethodError (undefined method `json_response' for #<UsersController:0x007fb929c0b608>):
+  
+app/controllers/users_controller.rb:11:in `create'
+Started POST "/users" for ::1 at 2017-11-12 16:05:05 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"wooowooo@woo.com", "password"=>"[FILTERED]", "user"=>{"email"=>"wooowooo@woo.com"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "wooowooo@woo.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "wooowooo@woo.com"], ["password_digest", "$2a$10$pPCAwgFS8Mgn6RXebs7IS.i62UF5.RsAX318WN94HBczakaXgut.2"], ["created_at", "2017-11-13 00:05:05.261755"], ["updated_at", "2017-11-13 00:05:05.261755"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 92ms (ActiveRecord: 1.5ms)
+
+
+  
+NoMethodError (undefined method `json_response' for #<UsersController:0x007fb92a05b3c0>):
+  
+app/controllers/users_controller.rb:11:in `create'

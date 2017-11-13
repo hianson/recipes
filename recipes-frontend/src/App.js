@@ -88,6 +88,9 @@ class App extends Component {
         </Modal>
 
         <view> {this.renderProfileLink()} </view>
+        <view className='home'> 
+          <Link to={'/'}>Homepage</Link> 
+        </view>
         
         <Switch>
           <Route exact path='/' render={(props) => <Search {...props} viewedRecipes={this.viewedRecipes} />} />
