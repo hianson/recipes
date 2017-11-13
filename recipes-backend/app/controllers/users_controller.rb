@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
   def index
-    user_id = params[:user_id]
-    @recipes = Recipe.where(user_id: user_id)
+    email = params[:email]
+    @user = User.where(email: email)
 
-    json_response({recipes: @recipes})
+    json_response({user: @user})
   end
 
   def create

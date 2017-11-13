@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { Switch, Route, Link } from 'react-router-dom';
 import './App.css';
 import Search from './components/Search.js'
+import UserProfile from './components/UserProfile.js'
 import Modal from './components/Modal.js'
 import axios from 'axios';
 
@@ -12,10 +14,12 @@ class App extends Component {
       registrationEmail: '',
       registrationPassword: '',
       loginEmail: '',
-      loginPassword: ''
+      loginPassword: '',
+      userRecipes: []
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.viewedRecipes = this.viewedRecipes.bind(this)
   }
 
   openModal() {
@@ -52,6 +56,16 @@ class App extends Component {
     });
   }
 
+  renderProfileLink() {
+    if (this.state.registrationEmail != '') {
+      return <Link to={"/users/" + this.state.registrationEmail}>Profile</Link>
+    }
+  }
+
+  viewedRecipes(recipe) {
+    this.state.userRecipes.push(recipe)
+  }
+
   render() {
     return (
       <div>
@@ -73,7 +87,15 @@ class App extends Component {
           <p><button onClick={() => this.closeModal()}>Close</button></p>
         </Modal>
 
-        <Search />
+        <view> {this.renderProfileLink()} </view>
+        <view className='home'> 
+          <Link to={'/'}>Homepage</Link> 
+        </view>
+        
+        <Switch>
+          <Route exact path='/' render={(props) => <Search {...props} viewedRecipes={this.viewedRecipes} />} />
+          <Route path='/users/:email' render={(props) => <UserProfile {...props} userRecipes={this.state.userRecipes}/>} />
+        </Switch>
 
       </div>
     );
